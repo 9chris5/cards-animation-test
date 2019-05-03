@@ -1,0 +1,50 @@
+.text {
+  &--light {
+    color: $light !important;
+  }
+  &--dark {
+    color: $dark !important;
+  }
+  &--pink {
+    color: $pink !important;
+  }
+  &--blue {
+    color: $blue !important;
+  }
+  &--teal {
+    color: $teal !important;
+  }
+  &--purple {
+    color: $purple !important;
+  }
+}
+
+.bg {
+  &--light {
+    background-color: $light !important;
+  }
+  &--dark {
+    background-color: $dark !important;
+  }
+  &--pink {
+    background-color: $pink !important;
+  }
+  &--blue {
+    background-color: $blue !important;
+  }
+  &--teal {
+    background-color: $teal !important;
+  }
+  &--purple {
+    background-color: $purple !important;
+  }
+}
+
+.fw {
+  &--medium {
+    font-size: 600 !important;
+  }
+  &--bold {
+    font-weight: 700 !important;
+  }
+}
