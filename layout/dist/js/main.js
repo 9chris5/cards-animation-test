@@ -66,6 +66,8 @@ window.onload = () => {
         }
         const overlay = document.querySelector('.card__expand-overlay');
 
+        document.body.style.overflow = 'hidden';
+
         requestAnimationFrame(() => {
 
           overlay.classList.add('transition');
@@ -100,6 +102,14 @@ window.onload = () => {
 
         });
 
+        const wrapper = document.querySelector('.card__expand-wrapper');
+
+        const exit = document.createElement('i');
+        wrapper.appendChild(exit);
+        exit.innerText = 'keyboard_backspace'
+        exit.className = 'material-icons card__icon';
+        exit.style.opacity = 0;
+
         items.image.addEventListener('transitionend', function handler() {
 
           items.description.classList.add('transition');
@@ -107,16 +117,7 @@ window.onload = () => {
 
           target.style.visibility = 'visible';
 
-          const wrapper = document.querySelector('.card__expand-wrapper');
 
-          const exit = document.createElement('i');
-          wrapper.appendChild(exit);
-          exit.innerText = 'keyboard_backspace'
-          exit.className = 'material-icons card__icon';
-          exit.style.position = 'fixed';
-          exit.style.top = '3rem';
-          exit.style.left = '3rem'
-          exit.style.opacity = 0;
           exit.classList.add('transition');
           exit.style.opacity = 1;
 
@@ -127,9 +128,10 @@ window.onload = () => {
 
             wrapper.addEventListener('transitionend', () => {
               document.body.removeChild(wrapper);
-            })
+              document.body.style.overflow = 'initial';
+            });
 
-          })
+          });
 
         });
         
